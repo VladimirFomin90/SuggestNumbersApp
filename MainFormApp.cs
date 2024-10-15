@@ -49,5 +49,19 @@ namespace SuggestNumbersApp
         {
 
         }
+
+        private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var textBox = (TextBox)sender;
+            if(!IsValidInput(e.KeyChar, textBox)) {
+                e.Handled = true;
+            }
+        }
+
+        private bool IsValidInput(char keyChar, TextBox textBox)
+        {
+            return char.IsControl(keyChar) || char.IsDigit(keyChar) ||
+                (keyChar == '-' && textBox.SelectionStart == 0);
+        }
     }
 }
