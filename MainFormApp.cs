@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -47,7 +48,26 @@ namespace SuggestNumbersApp
 
         private void ValidateMinAndMaxValue()
         {
+            bool isValid = true;
 
+            if(isInputComplete())
+            {
+                var minValue = BigInteger.Parse(textBox1.Text);
+                var maxValue = BigInteger.Parse(textBox2.Text);
+
+                if (maxValue < minValue)
+                {
+                    isValid = false;
+                }
+            }
+
+            textBox2.BackColor = isValid ? Color.White : Color.MediumVioletRed;
+        }
+
+        private bool isInputComplete()
+        {
+            return textBox1.Text.Length > 0 && textBox1.Text != "-" &&
+                   textBox2.Text.Length > 0 && textBox2.Text != "-";
         }
 
         private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -62,6 +82,11 @@ namespace SuggestNumbersApp
         {
             return char.IsControl(keyChar) || char.IsDigit(keyChar) ||
                 (keyChar == '-' && textBox.SelectionStart == 0);
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
