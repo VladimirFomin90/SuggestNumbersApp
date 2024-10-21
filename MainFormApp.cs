@@ -25,7 +25,7 @@ namespace SuggestNumbersApp
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            checkBox3.Visible = !checkBox1.Checked;
+            Accuracy.Visible = !IntegersOnly.Checked;
 
             RecalculateSuggestedType();
         }
@@ -86,7 +86,22 @@ namespace SuggestNumbersApp
 
         private void label2_Click(object sender, EventArgs e)
         {
+            if(isInputComplete()) {
+                var minValue = BigInteger.Parse(textBox1.Text);
+                var maxValue = BigInteger.Parse(textBox2.Text);
 
+                if (maxValue >= minValue)
+                {
+                    textBox1.Text =
+                        NumericTypeSuggester.GetName(
+                            minValue,
+                            maxValue,
+                            IntegersOnly.Checked,
+                            Accuracy.Checked);
+                    return;
+                }
+            }
+            textBox1.Text = "not enough data";
         }
     }
 }

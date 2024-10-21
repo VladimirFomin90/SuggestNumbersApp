@@ -30,8 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.IntegersOnly = new System.Windows.Forms.CheckBox();
+            this.Accuracy = new System.Windows.Forms.CheckBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -58,36 +58,36 @@
             this.label2.Text = "Max value:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // checkBox1
+            // IntegersOnly
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBox1.Location = new System.Drawing.Point(38, 131);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(142, 26);
-            this.checkBox1.TabIndex = 2;
-            this.checkBox1.Text = "Целые числа";
-            this.checkBox1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.IntegersOnly.AutoSize = true;
+            this.IntegersOnly.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.IntegersOnly.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.IntegersOnly.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.IntegersOnly.Location = new System.Drawing.Point(38, 131);
+            this.IntegersOnly.Name = "IntegersOnly";
+            this.IntegersOnly.Size = new System.Drawing.Size(142, 26);
+            this.IntegersOnly.TabIndex = 2;
+            this.IntegersOnly.Text = "Целые числа";
+            this.IntegersOnly.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.IntegersOnly.UseVisualStyleBackColor = true;
+            this.IntegersOnly.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // checkBox3
+            // Accuracy
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBox3.Checked = true;
-            this.checkBox3.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox3.Location = new System.Drawing.Point(38, 163);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(110, 26);
-            this.checkBox3.TabIndex = 4;
-            this.checkBox3.Text = "Точность";
-            this.checkBox3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBox3.UseVisualStyleBackColor = true;
-            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            this.Accuracy.AutoSize = true;
+            this.Accuracy.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Accuracy.Checked = true;
+            this.Accuracy.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.Accuracy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Accuracy.Location = new System.Drawing.Point(38, 163);
+            this.Accuracy.Name = "Accuracy";
+            this.Accuracy.Size = new System.Drawing.Size(110, 26);
+            this.Accuracy.TabIndex = 4;
+            this.Accuracy.Text = "Точность";
+            this.Accuracy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Accuracy.UseVisualStyleBackColor = true;
+            this.Accuracy.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
             // textBox1
             // 
@@ -117,8 +117,8 @@
             this.ClientSize = new System.Drawing.Size(1082, 348);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.checkBox3);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.Accuracy);
+            this.Controls.Add(this.IntegersOnly);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "MainFormApp";
@@ -130,11 +130,11 @@
 
         #endregion
 
+        private System.Windows.Forms.CheckBox IntegersOnly;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.CheckBox Accuracy;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
     }
 }
