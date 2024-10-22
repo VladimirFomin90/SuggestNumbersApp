@@ -34,6 +34,8 @@
             this.Accuracy = new System.Windows.Forms.CheckBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.SuggestedTypeResult = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -109,12 +111,37 @@
             this.textBox2.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
+            // SuggestedTypeResult
+            // 
+            this.SuggestedTypeResult.AutoSize = true;
+            this.SuggestedTypeResult.BackColor = System.Drawing.Color.Snow;
+            this.SuggestedTypeResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SuggestedTypeResult.ForeColor = System.Drawing.Color.Crimson;
+            this.SuggestedTypeResult.Location = new System.Drawing.Point(379, 113);
+            this.SuggestedTypeResult.Name = "SuggestedTypeResult";
+            this.SuggestedTypeResult.Size = new System.Drawing.Size(195, 20);
+            this.SuggestedTypeResult.TabIndex = 8;
+            this.SuggestedTypeResult.Text = "Не хватает данных!";
+            this.SuggestedTypeResult.Click += new System.EventHandler(this.SuggestedTypeResult_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(214, 109);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(145, 25);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Нумерной тип";
+            // 
             // MainFormApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SlateGray;
             this.ClientSize = new System.Drawing.Size(1082, 348);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.SuggestedTypeResult);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Accuracy);
@@ -136,6 +163,8 @@
         private System.Windows.Forms.CheckBox Accuracy;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label SuggestedTypeResult;
+        private System.Windows.Forms.Label label3;
     }
 }
 

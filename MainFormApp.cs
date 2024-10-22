@@ -43,7 +43,23 @@ namespace SuggestNumbersApp
 
         private void RecalculateSuggestedType()
         {
+            if (isInputComplete())
+            {
+                var minValue = BigInteger.Parse(textBox1.Text);
+                var maxValue = BigInteger.Parse(textBox2.Text);
 
+                if (maxValue >= minValue)
+                {
+                    SuggestedTypeResult.Text =
+                        NumericTypeSuggester.GetName(
+                            minValue,
+                            maxValue,
+                            IntegersOnly.Checked,
+                            Accuracy.Checked);
+                    return;
+                }
+            }
+            SuggestedTypeResult.Text = "Не хватает данных!";
         }
 
         private void ValidateMinAndMaxValue()
@@ -86,22 +102,12 @@ namespace SuggestNumbersApp
 
         private void label2_Click(object sender, EventArgs e)
         {
-            if(isInputComplete()) {
-                var minValue = BigInteger.Parse(textBox1.Text);
-                var maxValue = BigInteger.Parse(textBox2.Text);
+            
+        }
 
-                if (maxValue >= minValue)
-                {
-                    textBox1.Text =
-                        NumericTypeSuggester.GetName(
-                            minValue,
-                            maxValue,
-                            IntegersOnly.Checked,
-                            Accuracy.Checked);
-                    return;
-                }
-            }
-            textBox1.Text = "not enough data";
+        private void SuggestedTypeResult_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
